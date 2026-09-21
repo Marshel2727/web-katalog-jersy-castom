@@ -1,8 +1,8 @@
 import type { SiteConfig, Testimonial } from "@/types";
 export const siteConfig: SiteConfig = {
-  name: "JerseyKita",
-  whatsapp: "",
-  tagline: "Beda tim. Beda cerita. Jersey kamu.",
+  name: "BP Sport",
+  whatsapp: "62882020423072",
+  tagline: "Spesialis jersey. Kaos custom sesuai desain kamu.",
 };
 export const testimonials: Testimonial[] = [
   {

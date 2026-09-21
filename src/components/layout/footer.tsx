@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { siteConfig } from "@/data/site";
@@ -10,12 +11,12 @@ export function Footer() {
         <div className="container footer-main">
           <div>
             <Link className="brand" href="/">
-              Jersey<span className="lime">Kita.</span>
+              <Image className="brand-logo" src="/images/bp-sport-logo.png" alt="BP Sport" width={2296} height={394} />
             </Link>
             <p>
               Identitas tim kamu, dalam setiap jahitan.
               <br />
-              Jersey custom untuk cerita yang berbeda.
+              Spesialis jersey, juga menerima kaos desain custom.
             </p>
           </div>
           <div className="footer-links">
@@ -38,8 +39,8 @@ export function Footer() {
           </div>
         </div>
         <div className="container footer-bottom">
-          <span>© {new Date().getFullYear()} JerseyKita.</span>
-          <span>Website demo · Desain & ulasan merupakan contoh.</span>
+          <span>© {new Date().getFullYear()} {siteConfig.name}.</span>
+          <span>Foto produk BP Sport · Ulasan masih berupa contoh.</span>
         </div>
       </footer>
       {wa ? (

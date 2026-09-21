@@ -11,21 +11,21 @@ export function DesignCard({ design }: { design: JerseyDesign }) {
       >
         <span className="card-tag">
           {design.popular
-            ? "FAVORIT PILIHAN"
+            ? "DESAIN PILIHAN"
             : design.previousOrder
               ? "REFERENSI PESANAN"
               : "CUSTOM SERIES"}
         </span>
         <Image
           src={design.images[0]}
-          alt={`Ilustrasi jersey ${design.name} tampak depan`}
+          alt={`Foto produk ${design.name}`}
           width={520}
           height={580}
         />
         <span className="card-arrow">
           <ArrowUpRight size={21} />
         </span>
-        <span className="image-note">ILUSTRASI DESAIN</span>
+        <span className="image-note">FOTO PRODUK</span>
       </div>
       <div className="card-meta">
         <span>{design.category}</span>

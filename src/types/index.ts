@@ -2,7 +2,7 @@ export type JerseyDesign = {
   slug: string;
   code: string;
   name: string;
-  category: "Sepak bola" | "Futsal" | "Basket" | "Badminton";
+  category: "Sepak bola" | "Futsal" | "Basket" | "Badminton" | "Jersey" | "Kaos";
   description: string;
   color: string;
   accent: string;
@@ -18,3 +18,21 @@ export type Testimonial = {
   isExample: boolean;
 };
 export type SiteConfig = { name: string; whatsapp: string; tagline: string };
+export type PricingPackage = {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  condition: string;
+  options: { label: string; price: number; unit: "atasan" | "setel" }[];
+};
+
+export type MaterialOption = {
+  id: string;
+  name: string;
+  image: string;
+  alt: string;
+  priceLabel: string;
+  source: string;
+};
+export type CollarOption = MaterialOption & { number: number };

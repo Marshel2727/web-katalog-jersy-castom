@@ -12,20 +12,23 @@
     "preview": "serve out -l 3000"
   },
   "dependencies": {
+    "jquery": "^3.7.1",
+    "lucide-react": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "lucide-react": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "typescript": "^5",
+    "@types/jquery": "^4.0.1",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "latest",
-    "serve": "^14"
+    "serve": "^14",
+    "sharp": "^0.35.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

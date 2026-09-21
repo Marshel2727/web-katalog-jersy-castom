@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ModelSlideshow } from "./model-slideshow";
 import { designs } from "@/data/designs";
 import { testimonials } from "@/data/site";
 import { DesignCard } from "@/components/catalog/design-card";
 import { WhatsAppLink } from "@/components/ui/whatsapp-link";
 import {
   ArrowUpRight,
-  ArrowRight,
   Check,
   PencilRuler,
   Palette,
@@ -20,7 +20,7 @@ export function Hero() {
       <section className="hero container">
         <div className="hero-copy">
           <div className="hero-kicker">
-            <span className="status-dot" /> YOUR TEAM. YOUR IDENTITY.
+            <span className="status-dot" /> BP SPORT / JERSEY & CUSTOM APPAREL
           </div>
           <h1>
             Bukan sekadar
@@ -30,20 +30,16 @@ export function Hero() {
             <span className="lime">Ini identitas.</span>
           </h1>
           <p>
-            Dari ide di kepala, jadi kebanggaan satu tim.
-            <br />
-            Bikin jersey custom yang sepenuhnya kamu—
-            <br className="desktop-break" />
-            mulai dari warna, logo, sampai detail terkecil.
+            Jersey dan kaos custom untuk tim, komunitas, dan acara.
+            Sesuaikan warna, logo, nama, serta nomor sesuai kebutuhan kamu.
           </p>
           <div className="hero-actions">
             <Link href="/katalog" className="button">
-              Jelajahi Katalog <ArrowUpRight size={19} />
+              Lihat Katalog <ArrowUpRight size={19} />
             </Link>
-            <Link href="#custom" className="hero-secondary">
-              Punya desain sendiri? <ArrowRight size={17} />
-            </Link>
+            <WhatsAppLink className="hero-consultation">Konsultasi WhatsApp</WhatsAppLink>
           </div>
+          <p className="ordering-help">Pemesanan dilakukan melalui WhatsApp. Belum punya desain? Ceritakan kebutuhanmu, kami bantu arahkan.</p>
           <div className="hero-features">
             <span>
               <Check size={15} /> Desain sesukamu
@@ -60,15 +56,8 @@ export function Hero() {
             <br />
             GAME.
           </div>
-          <span className="art-label">JK® — CUSTOM ATHLETIC WEAR</span>
-          <Image
-            className="hero-jersey"
-            src="/images/volt-united.svg"
-            alt="Ilustrasi jersey Volt United warna hitam dengan pola diagonal hijau lime"
-            width={650}
-            height={720}
-            priority
-          />
+          <span className="art-label">BP SPORT — CUSTOM ATHLETIC WEAR</span>
+          <ModelSlideshow />
           <div className="hero-sticker">
             <span>BUILT FOR</span>
             <strong>
@@ -80,15 +69,18 @@ export function Hero() {
           </div>
           <div className="art-bottom">
             <span>
-              <i className="status-dot" /> VOLT UNITED — 001
+              <i className="status-dot" /> JERSEY CUSTOM — BP SPORT
             </span>
-            <span>CONCEPT DESIGN ↗</span>
+            <span>FOTO MODEL ↗</span>
           </div>
         </div>
       </section>
-      <div className="ticker" aria-label="Layanan custom jersey">
-        <div>
-          YOUR TEAM, YOUR RULES <span>✳</span> CUSTOM TANPA BATAS <span>✳</span>{" "}
+      <div className="ticker" aria-label="Layanan jersey dan kaos custom">
+        <div aria-hidden="true">
+          JERSEY CUSTOM <span>✳</span> KAOS DESAIN CUSTOM <span>✳</span>{" "}
+          DARI IDE JADI IDENTITAS <span>✳</span> MADE FOR YOUR GAME{" "}
+          <span>✳</span>{" "}
+          JERSEY CUSTOM <span>✳</span> KAOS DESAIN CUSTOM <span>✳</span>{" "}
           DARI IDE JADI IDENTITAS <span>✳</span> MADE FOR YOUR GAME{" "}
           <span>✳</span>
         </div>
@@ -127,7 +119,7 @@ export function FeaturedDesigns() {
           ))}
       </div>
       <p className="demo-note">
-        Koleksi demo · Ilustrasi dan label favorit merupakan contoh konten.
+        Pilihan referensi dari foto produk BP Sport.
       </p>
     </section>
   );
@@ -137,20 +129,14 @@ export function CustomSection() {
     <section className="container" id="custom">
       <div className="custom-section">
         <div className="custom-visual">
-          <div className="design-note">
-            YOUR IDEA
-            <br />
-            <span>STARTS HERE.</span>
-          </div>
           <Image
-            src="/images/midnight-fc-back.svg"
-            alt="Ilustrasi sisi belakang jersey dengan nama dan nomor yang dapat disesuaikan"
+            className="brand-fabric-image"
+            src="/images/bp-sport-emerald.jpg"
+            alt="Logo putih BP Sport di atas kain emerald dengan gradasi teal gelap"
             width={500}
             height={560}
           />
-          <span className="annotation annotation-one">↘ NAMA KAMU</span>
-          <span className="annotation annotation-two">WARNA TIM ↗</span>
-          <span className="custom-label">DESIGN LAB / JERSEYKITA</span>
+          <span className="custom-label">DESIGN LAB / BP SPORT</span>
         </div>
         <div className="custom-copy">
           <span className="eyebrow">02 / MAKE IT PERSONAL</span>
@@ -165,6 +151,10 @@ export function CustomSection() {
             Punya sketsa sendiri atau baru sebatas ide? Mulai aja dulu. Kita
             diskusikan sampai ketemu desain yang cocok dengan karakter tim kamu.
           </p>
+          <div className="service-summary">
+            <div><strong>Jersey custom</strong><span>Layanan utama untuk tim olahraga dan komunitas. Sesuaikan warna, logo, nama, serta nomor.</span></div>
+            <div><strong>Kaos custom</strong><span>Terima desain sendiri untuk kaos komunitas, acara, atau kebutuhan personal. Diskusikan desain dan detail pesanan via WhatsApp.</span></div>
+          </div>
           <div className="custom-pill-list">
             <span>↗ Warna tim</span>
             <span>↗ Logo & sponsor</span>
@@ -196,7 +186,7 @@ export function PreviousOrders() {
             klub, dan momen kebersamaan tim.
           </p>
           <span className="demo-note">
-            Contoh portofolio pesanan — bukan pesanan asli.
+            Foto produk sebagai inspirasi pesanan kamu.
           </span>
         </div>
       </div>
@@ -214,20 +204,20 @@ export function PreviousOrders() {
             <div className="story-shirts">
               <Image
                 src={d.images[0]}
-                alt={`Referensi ${d.name} tampak depan`}
+                alt={`Foto produk ${d.name}`}
                 width={350}
                 height={390}
               />
               <Image
                 src={d.images[1]}
-                alt={`Referensi ${d.name} tampak belakang`}
+                alt={`Foto detail ${d.name}`}
                 width={350}
                 height={390}
               />
             </div>
             <div className="story-caption">
               <div>
-                <small>{d.category.toUpperCase()} / CONCEPT PROJECT</small>
+                <small>{d.category.toUpperCase()} / FOTO PRODUK</small>
                 <h3>{d.name} Collection</h3>
               </div>
               <span>Lihat desain ↗</span>
@@ -243,22 +233,22 @@ export function OrderingSteps() {
     {
       icon: Shirt,
       title: "Pilih referensi",
-      text: "Cari inspirasi dari katalog atau siapkan ide desain sendiri.",
+      text: "Pilih referensi dari katalog atau kirim ide sendiri. Belum punya desain? Kami bantu arahkan.",
     },
     {
       icon: PencilRuler,
-      title: "Ngobrol di WhatsApp",
-      text: "Ceritakan kebutuhan tim, jumlah jersey, dan detail custom kamu.",
+      title: "Konsultasi WhatsApp",
+      text: "Ceritakan pilihan jersey atau kaos, jumlah pesanan, dan detail desain custom kamu.",
     },
     {
       icon: Palette,
-      title: "Sepakati detailnya",
-      text: "Konfirmasi desain, bahan, harga, serta estimasi pengerjaan.",
+      title: "Sepakati desain dan harga",
+      text: "Sepakati desain, bahan, kerah, harga akhir, dan estimasi pengerjaan sebelum produksi.",
     },
     {
       icon: PackageCheck,
-      title: "Waktunya produksi",
-      text: "Setelah disepakati, jersey tim kamu masuk proses produksi.",
+      title: "Produksi",
+      text: "Setelah disepakati, jersey atau kaos custom kamu masuk proses produksi.",
     },
   ];
   return (
@@ -274,9 +264,9 @@ export function OrderingSteps() {
             </h2>
           </div>
           <p className="muted">
-            Empat langkah menuju
+            Pemesanan melalui WhatsApp.
             <br />
-            identitas baru tim kamu.
+            Kami bantu dari desain sampai produksi.
           </p>
         </div>
         <div className="steps">
@@ -343,7 +333,7 @@ export function ClosingCta() {
           tampil <span>beda?</span>
         </h2>
         <p>Satu ide kecil bisa jadi awal identitas besar tim kamu.</p>
-        <WhatsAppLink>Yuk, diskusi jersey kamu</WhatsAppLink>
+        <WhatsAppLink>Diskusi jersey atau kaos custom</WhatsAppLink>
         <span className="closing-decoration" aria-hidden="true">
           ↗
         </span>

@@ -4,11 +4,12 @@ import { Footer } from "@/components/layout/footer";
 import "./globals.css";
 export const metadata: Metadata = {
   title: {
-    default: "JerseyKita — Jersey Custom, Karakter Kamu.",
-    template: "%s | JerseyKita",
+    default: "BP Sport — Jersey & Kaos Custom",
+    template: "%s | BP Sport",
   },
   description:
-    "Temukan inspirasi jersey untuk tim kamu. Jelajahi katalog desain dan diskusikan custom nama, nomor, warna, serta logo melalui WhatsApp.",
+    "BP Sport melayani jersey sebagai produk utama serta kaos desain custom. Jelajahi katalog jersey dan diskusikan desain, nama, nomor, warna, serta logo melalui WhatsApp.",
+  icons: { icon: "/images/bp-sport-icon.png" },
 };
 export default function RootLayout({
   children,

@@ -1,16 +1,19 @@
 import { siteConfig } from "@/data/site";
+import type { PricingPackage } from "@/types";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { MessageCircle, ArrowUpRight } from "./icon";
 export function WhatsAppLink({
   design,
+  pricingPackage,
   children = "Konsultasi via WhatsApp",
   className = "",
 }: {
   design?: { name: string; code: string };
+  pricingPackage?: PricingPackage;
   children?: React.ReactNode;
   className?: string;
 }) {
-  const url = buildWhatsAppUrl(siteConfig.whatsapp, design);
+  const url = buildWhatsAppUrl(siteConfig.whatsapp, design, pricingPackage);
   if (!url)
     return (
       <span className={`wa-unavailable ${className}`}>

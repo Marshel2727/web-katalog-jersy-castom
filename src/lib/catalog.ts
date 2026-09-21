@@ -12,6 +12,6 @@ export function filterDesigns(
         .includes(query.trim().toLowerCase()) &&
       (category === "Semua" || d.category === category) &&
       (collection === "Semua desain" ||
-        (collection === "Populer" ? d.popular : d.previousOrder)),
+        ((collection === "Pilihan" || collection === "Populer") ? d.popular : d.previousOrder)),
   );
 }

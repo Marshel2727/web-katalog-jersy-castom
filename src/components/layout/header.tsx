@@ -1,8 +1,10 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { WhatsAppLink } from "@/components/ui/whatsapp-link";
 export function Header() {
   const [open, setOpen] = useState(false);
   const path = usePathname();
@@ -12,13 +14,17 @@ export function Header() {
         <Link
           href="/"
           className="brand"
-          aria-label="JerseyKita beranda"
+          aria-label="BP Sport beranda"
           onClick={() => setOpen(false)}
         >
-          <span className="brand-mark">
-            J<span>↗</span>
-          </span>
-          Jersey<span className="lime">Kita.</span>
+          <Image
+            className="brand-logo"
+            src="/images/bp-sport-logo.png"
+            alt="BP Sport"
+            width={2296}
+            height={394}
+            priority
+          />
         </Link>
         <button
           className="menu-toggle"
@@ -49,21 +55,20 @@ export function Header() {
             href="/katalog"
             onClick={() => setOpen(false)}
           >
-            Katalog Jersey
+            Katalog
+          </Link>
+          <Link href="/paket-harga" className={path.startsWith("/paket-harga") ? "active" : ""} onClick={() => setOpen(false)}>Paket Harga</Link>
+          <Link
+            className={path.startsWith("/bahan-kerah") ? "active" : ""}
+            href="/bahan-kerah"
+            onClick={() => setOpen(false)}
+          >
+            Bahan & Kerah
           </Link>
           <Link href="/#cara-pesan" onClick={() => setOpen(false)}>
             Cara Pesan
           </Link>
-          <Link href="/#ulasan" onClick={() => setOpen(false)}>
-            Ulasan
-          </Link>
-          <Link
-            className="nav-cta"
-            href="/#custom"
-            onClick={() => setOpen(false)}
-          >
-            Bikin Jersey Kamu <ArrowUpRight size={16} />
-          </Link>
+<WhatsAppLink className="nav-cta">Konsultasi WhatsApp</WhatsAppLink>
         </nav>
       </div>
     </header>

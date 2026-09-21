@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
 export const metadata: Metadata = { title: "Katalog Jersey Custom" };
 export default function CatalogPage() {
   return (
     <main id="main" className="container catalog-page">
       <div className="page-heading">
-        <span className="eyebrow">THE DESIGN COLLECTION / 01—08</span>
+        <span className="eyebrow">KOLEKSI FOTO PRODUK / 18 DESAIN</span>
         <h1>
           Temukan gaya.
           <br />
@@ -15,9 +16,9 @@ export default function CatalogPage() {
           Mulai dari desain yang kamu suka. Sesuaikan warna, logo, nama, dan
           nomor untuk identitas tim kamu.
         </p>
+        <Link className="text-link catalog-pricing-link" href="/paket-harga">Lihat paket harga jersey ↗</Link>
         <span className="demo-note">
-          Seluruh desain merupakan ilustrasi contoh, termasuk label populer dan
-          referensi pesanan.
+          Foto asli jersey dan kaos BP Sport sebagai referensi pesanan custom.
         </span>
       </div>
       <CatalogBrowser />

@@ -79,10 +79,13 @@ export default async function DetailPage({
               konsultasi.
             </p>
           </div>
-          <WhatsAppLink design={design}>Diskusikan desain ini</WhatsAppLink>
+          <Link className="text-link material-detail-link" href="/bahan-kerah">
+            Lihat pilihan bahan & kerah <ArrowRight size={16} />
+          </Link>
+          <p className="ordering-help">Nama, nomor, logo, dan warna dapat diubah. Belum tahu bahan atau kerah yang cocok? Kami bantu pilih saat konsultasi.</p>
+          <WhatsAppLink design={design}>Pesan desain ini via WhatsApp</WhatsAppLink>
           <p className="demo-note">
-            Ilustrasi contoh, bukan dokumentasi produk atau pesanan asli. Detail
-            akhir dikonfirmasi bersama toko.
+            Pemesanan dilanjutkan melalui WhatsApp. Tambahkan jumlah pesanan dan kebutuhanmu; harga akhir dikonfirmasi bersama toko.
           </p>
         </section>
       </div>

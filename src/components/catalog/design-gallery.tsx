@@ -10,13 +10,13 @@ export function DesignGallery({ design }: { design: JerseyDesign }) {
         <span className="card-tag">{design.code} / CUSTOM SERIES</span>
         <Image
           src={design.images[index]}
-          alt={`Ilustrasi ${design.name} tampak ${index === 0 ? "depan" : "belakang"}`}
+          alt={`Foto ${design.name} — ${index === 0 ? "sampul" : `detail ${index}`}`}
           width={650}
           height={720}
           priority
         />
         <span className="image-note">
-          ILUSTRASI DESAIN · WARNA DAPAT DISESUAIKAN
+          FOTO PRODUK · DESAIN DAPAT DISESUAIKAN
         </span>
       </div>
       <div className="gallery-thumbnails">
@@ -25,11 +25,11 @@ export function DesignGallery({ design }: { design: JerseyDesign }) {
             key={src}
             onClick={() => setIndex(i)}
             aria-pressed={index === i}
-            aria-label={`Lihat tampak ${i === 0 ? "depan" : "belakang"}`}
+            aria-label={`Lihat ${i === 0 ? "sampul" : `detail ${i}`}`}
             className={index === i ? "selected" : ""}
           >
             <Image src={src} alt="" width={70} height={78} />
-            <span>{i === 0 ? "Depan" : "Belakang"}</span>
+            <span>{i === 0 ? "Sampul" : `Detail ${i}`}</span>
           </button>
         ))}
       </div>

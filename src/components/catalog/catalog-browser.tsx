@@ -28,15 +28,15 @@ export function CatalogBrowser() {
             value={collection}
             onChange={(e) => setCollection(e.target.value)}
           >
-            {["Semua desain", "Populer", "Pesanan sebelumnya"].map((c) => (
+            {["Semua desain", "Pilihan", "Pesanan sebelumnya"].map((c) => (
               <option key={c}>{c}</option>
             ))}
           </select>
         </label>
       </div>
       <div className="filter-row">
-        <div className="filter-tabs" aria-label="Kategori olahraga">
-          {["Semua", "Sepak bola", "Futsal", "Basket", "Badminton"].map((c) => (
+        <div className="filter-tabs" aria-label="Kategori produk">
+          {["Semua", ...new Set(designs.map((design) => design.category))].map((c) => (
             <button
               key={c}
               aria-pressed={category === c}
