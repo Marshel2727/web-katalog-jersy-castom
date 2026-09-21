@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ModelSlideshow } from "./model-slideshow";
+import { JerseyCustomizer } from "./jersey-customizer";
 import { designs } from "@/data/designs";
 import { testimonials } from "@/data/site";
 import { DesignCard } from "@/components/catalog/design-card";
@@ -125,47 +126,7 @@ export function FeaturedDesigns() {
   );
 }
 export function CustomSection() {
-  return (
-    <section className="container" id="custom">
-      <div className="custom-section">
-        <div className="custom-visual">
-          <Image
-            className="brand-fabric-image"
-            src="/images/bp-sport-emerald.jpg"
-            alt="Logo putih BP Sport di atas kain emerald dengan gradasi teal gelap"
-            width={500}
-            height={560}
-          />
-          <span className="custom-label">DESIGN LAB / BP SPORT</span>
-        </div>
-        <div className="custom-copy">
-          <span className="eyebrow">02 / MAKE IT PERSONAL</span>
-          <h2>
-            Tim kamu unik.
-            <br />
-            Jerseynya juga
-            <br />
-            <span className="lime">harus begitu.</span>
-          </h2>
-          <p>
-            Punya sketsa sendiri atau baru sebatas ide? Mulai aja dulu. Kita
-            diskusikan sampai ketemu desain yang cocok dengan karakter tim kamu.
-          </p>
-          <div className="service-summary">
-            <div><strong>Jersey custom</strong><span>Layanan utama untuk tim olahraga dan komunitas. Sesuaikan warna, logo, nama, serta nomor.</span></div>
-            <div><strong>Kaos custom</strong><span>Terima desain sendiri untuk kaos komunitas, acara, atau kebutuhan personal. Diskusikan desain dan detail pesanan via WhatsApp.</span></div>
-          </div>
-          <div className="custom-pill-list">
-            <span>↗ Warna tim</span>
-            <span>↗ Logo & sponsor</span>
-            <span>↗ Nama & nomor</span>
-            <span>↗ Desain sendiri</span>
-          </div>
-          <WhatsAppLink />
-        </div>
-      </div>
-    </section>
-  );
+  return <JerseyCustomizer />;
 }
 export function PreviousOrders() {
   return (

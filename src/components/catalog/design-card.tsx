@@ -3,10 +3,11 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import type { JerseyDesign } from "@/types";
 export function DesignCard({ design }: { design: JerseyDesign }) {
+  const hasSecondary = Boolean(design.images && design.images[1]);
   return (
     <Link className="design-card group" href={`/katalog/${design.slug}/`}>
       <div
-        className="card-image"
+        className={`card-image ${hasSecondary ? "has-dual-view" : ""}`}
         style={{ "--accent": design.accent } as React.CSSProperties}
       >
         <span className="card-tag">
@@ -16,12 +17,29 @@ export function DesignCard({ design }: { design: JerseyDesign }) {
               ? "REFERENSI PESANAN"
               : "CUSTOM SERIES"}
         </span>
-        <Image
-          src={design.images[0]}
-          alt={`Foto produk ${design.name}`}
-          width={520}
-          height={580}
-        />
+        <div className="card-image-stack">
+          <Image
+            className="card-img-primary"
+            src={design.images[0]}
+            alt={`Foto produk ${design.name}`}
+            width={520}
+            height={580}
+          />
+          {hasSecondary && (
+            <Image
+              className="card-img-secondary"
+              src={design.images[1]}
+              alt={`Foto detail ${design.name}`}
+              width={520}
+              height={580}
+            />
+          )}
+        </div>
+        {hasSecondary && (
+          <span className="card-view-badge" aria-hidden="true">
+            Lihat detail ↗
+          </span>
+        )}
         <span className="card-arrow">
           <ArrowUpRight size={21} />
         </span>
