@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { materials, collars } from "@/data/materials";
 import { OptionGallery } from "@/components/materials/option-gallery";
 import { WhatsAppLink } from "@/components/ui/whatsapp-link";
+import { Check, ArrowDown, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Pilihan Bahan & Kerah",
@@ -18,32 +20,106 @@ export default function MaterialsPage() {
         <span>/</span>
         <span>Bahan & Kerah</span>
       </nav>
-      <div className="page-heading">
-        <span className="eyebrow">BP SPORT / THE FINISHING TOUCH</span>
-        <h1>
-          Detail pilihan.
-          <br />
-          <span className="lime">Nyaman jadi kamu.</span>
-        </h1>
-        <p>
-          Kenali tekstur kain dan pilih bentuk kerah untuk jersey kamu. Klik
-          gambar untuk melihat lebih dekat sebelum berdiskusi dengan kami.
-        </p>
-      </div>
-      <nav
-        className="materials-section-nav"
-        aria-label="Bagian bahan dan kerah"
-      >
-        <a href="#jenis-kain">
-          Jenis Kain <span>21</span>
-        </a>
-        <a href="#model-kerah">
-          Model Kerah <span>19</span>
-        </a>
-      </nav>
-      <div className="materials-consultation ordering-guidance"><h2>Belum tahu bahan yang cocok?</h2><p>Kami bantu pilih saat konsultasi. Kamu tidak harus menentukan bahan dan kerah sebelum menghubungi kami.</p><WhatsAppLink>Bantu pilih bahan & kerah</WhatsAppLink></div>
+
+      {/* HERO SECTION: BALANCED 2-COLUMN SHOWCASE */}
+      <section className="materials-hero">
+        <div className="materials-hero-grid">
+          {/* KOLOM KIRI: INFO & AKSI UTAMA */}
+          <div className="materials-hero-left">
+            <span className="eyebrow">
+              <Sparkles size={13} className="inline-icon" /> BP SPORT / THE FINISHING TOUCH
+            </span>
+            <h1>
+              Detail pilihan.
+              <br />
+              <span className="lime">Nyaman jadi kamu.</span>
+            </h1>
+            <p className="materials-hero-lead">
+              Eksplorasi 21 jenis kain dry-fit dan 19 model kerah pilihan untuk jersey tim kamu.
+              Setiap kain memiliki karakteristik sirkulasi udara, elastisitas, dan tekstur khusus
+              yang disesuaikan dengan kebutuhan bertanding.
+            </p>
+
+            <div className="materials-quick-actions">
+              <a href="#jenis-kain" className="button">
+                21 Jenis Kain <ArrowDown size={15} />
+              </a>
+              <a href="#model-kerah" className="button button-outline">
+                19 Model Kerah <ArrowDown size={15} />
+              </a>
+            </div>
+
+            <div className="materials-feature-tags">
+              <span>
+                <Check size={14} /> 100% Dry-Fit Athletic
+              </span>
+              <span>
+                <Check size={14} /> Sirkulasi Maksimal
+              </span>
+              <span>
+                <Check size={14} /> Jahitan Standar Turnamen
+              </span>
+            </div>
+          </div>
+
+          {/* KOLOM KANAN: SPOTLIGHT CARD (MENGISI RUANG KOSONG) */}
+          <div className="materials-hero-right">
+            <div className="materials-spotlight-card">
+              <div className="spotlight-badge-row">
+                <span className="spotlight-tag">★ BAHAN TERPOPULER</span>
+                <span className="spotlight-sub">Pilihan Utama Tim</span>
+              </div>
+
+              <div className="spotlight-preview-box">
+                <Image
+                  src="/images/bahan-kerah/kain/milano.webp"
+                  alt="Tekstur kain Dry-Fit Milano"
+                  width={380}
+                  height={220}
+                  className="spotlight-img"
+                  priority
+                />
+                <div className="spotlight-caption-overlay">
+                  <strong>Dry-Fit Milano Premium</strong>
+                  <small>Pola zig-zag halus • Ringan, dingin, dan menyerap keringat cepat</small>
+                </div>
+              </div>
+
+              <div className="spotlight-specs-list">
+                <div className="spec-row">
+                  <div className="spec-text">
+                    <span>Sirkulasi Udara (Breathability)</span>
+                    <strong>98%</strong>
+                  </div>
+                  <div className="spec-bar"><div className="spec-progress" style={{ width: "98%" }} /></div>
+                </div>
+                <div className="spec-row">
+                  <div className="spec-text">
+                    <span>Ketahanan Tarikan (Durability)</span>
+                    <strong>92%</strong>
+                  </div>
+                  <div className="spec-bar"><div className="spec-progress" style={{ width: "92%" }} /></div>
+                </div>
+                <div className="spec-row">
+                  <div className="spec-text">
+                    <span>Cepat Kering (Quick-Dry)</span>
+                    <strong>96%</strong>
+                  </div>
+                  <div className="spec-bar"><div className="spec-progress" style={{ width: "96%" }} /></div>
+                </div>
+              </div>
+
+              <div className="spotlight-consultation">
+                <p>Bingung memilih kain atau kerah yang tepat untuk cabang olahraga tim kamu?</p>
+                <WhatsAppLink className="spotlight-btn">Konsultasi Bahan & Kerah</WhatsAppLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <p className="materials-price-note">
-        FREE, nilai K/STEL, dan +K ditampilkan sesuai referensi pilihan
+        * FREE, nilai K/STEL, dan +K ditampilkan sesuai referensi pilihan
         bahan/kerah, bukan harga jersey lengkap. Harga akhir dan kesesuaian
         dengan pesanan dikonfirmasi saat konsultasi.
       </p>

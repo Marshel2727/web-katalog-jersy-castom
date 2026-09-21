@@ -2,15 +2,22 @@
 
 import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
-import { Maximize2, X } from "lucide-react";
+import { Maximize2, X, Search } from "lucide-react";
 import type { MaterialOption } from "@/types";
 
 export function OptionGallery({ items }: { items: MaterialOption[] }) {
   const [selected, setSelected] = useState<MaterialOption | null>(null);
   const [filter, setFilter] = useState("Semua");
-  const filteredItems = items.filter((item) =>
-    filter === "Semua" || (filter === "Gratis" ? item.priceLabel === "FREE" : item.priceLabel !== "FREE"),
-  );
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredItems = items.filter((item) => {
+    const matchesPrice =
+      filter === "Semua" || (filter === "Gratis" ? item.priceLabel === "FREE" : item.priceLabel !== "FREE");
+    const matchesSearch =
+      !searchQuery.trim() || item.name.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesPrice && matchesSearch;
+  });
+
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);
   const titleId = useId();
@@ -30,10 +37,32 @@ export function OptionGallery({ items }: { items: MaterialOption[] }) {
   return (
     <>
       <div className="filter-tabs option-filters" role="group" aria-label="Filter harga pilihan">
-        {["Semua", "Gratis", "Berbayar"].map((label) => (
-          <button key={label} className={filter === label ? "selected" : ""} aria-pressed={filter === label} onClick={() => setFilter(label)}>{label}</button>
-        ))}
-        <span className="option-count" aria-live="polite">{filteredItems.length} pilihan</span>
+        <div className="filter-button-group">
+          {["Semua", "Gratis", "Berbayar"].map((label) => (
+            <button
+              key={label}
+              className={filter === label ? "selected" : ""}
+              aria-pressed={filter === label}
+              onClick={() => setFilter(label)}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        <label className="option-search-box">
+          <Search size={14} className="search-icon" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Cari nama pilihan..."
+          />
+        </label>
+
+        <span className="option-count" aria-live="polite">
+          {filteredItems.length} pilihan
+        </span>
       </div>
       <div className="option-grid">
         {filteredItems.map((item) => (
