@@ -78,3 +78,9 @@ Halaman /paket-harga menampilkan paket printing dan setelan sablon. Ubah harga, 
 ## jQuery dasar untuk tugas
 
 FAQ pemesanan di beranda (setelah Cara Pesan) menggunakan jQuery pada `src/components/home/ordering-faq.tsx`: `.on()` menangani klik, `.find()`/`.closest()` memilih elemen, `.attr()` memperbarui status aksesibilitas, `.toggleClass()` menandai pertanyaan aktif, dan `.slideToggle()` membuka/menutup jawaban. `.stop()` mencegah antrean animasi saat diklik cepat dan `.off()` membersihkan event saat komponen dilepas. React merender struktur awal, sedangkan jQuery mengelola interaksi FAQ melalui `useEffect` dan selector lokal. Tombol mendukung Enter/Spasi; animasi dinonaktifkan jika pengguna memilih reduced motion.
+
+## Pratinjau tautan WhatsApp
+
+Metadata Open Graph dan Twitter menggunakan nama BP Sport, deskripsi layanan, serta gambar identitas emerald. Isi environment variable NEXT_PUBLIC_SITE_URL dengan URL Production publik (termasuk https://) sebelum build. Pada Vercel, jika variabel tersebut kosong, metadata menggunakan VERCEL_PROJECT_PRODUCTION_URL; build lokal memakai http://localhost:3000.
+
+Bagikan domain Production dari Settings > Domains, bukan URL deployment acak yang dilindungi. Jika bot menerima halaman Protected Deployment, metadata website tidak dapat dibaca. Perubahan metadata perlu di-deploy ulang; pratinjau lama dapat tetap tersimpan dalam cache aplikasi pesan.

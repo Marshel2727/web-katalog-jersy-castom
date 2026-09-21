@@ -12,6 +12,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+      (process.env.VERCEL_PROJECT_PRODUCTION_URL
+        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+        : "http://localhost:3000"),
+  ),
   title: {
     default: "BP Sport — Jersey & Kaos Custom",
     template: "%s | BP Sport",
@@ -19,6 +25,21 @@ export const metadata: Metadata = {
   description:
     "BP Sport melayani jersey sebagai produk utama serta kaos desain custom. Jelajahi katalog jersey dan diskusikan desain, nama, nomor, warna, serta logo melalui WhatsApp.",
   icons: { icon: "/images/bp-sport-icon.png" },
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    siteName: "BP Sport",
+    title: "BP Sport — Jersey & Kaos Custom",
+    description:
+      "Desain sesuai identitas tim kamu. Lihat katalog, paket harga, serta pilihan bahan dan kerah. Konsultasikan pesanan langsung melalui WhatsApp.",
+    images: [{ url: "/images/bp-sport-emerald.jpg", alt: "Logo BP Sport dengan latar kain emerald" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BP Sport — Jersey & Kaos Custom",
+    description: "Jersey dan kaos custom untuk tim, komunitas, dan acara. Pilih desainmu dan konsultasikan melalui WhatsApp.",
+    images: ["/images/bp-sport-emerald.jpg"],
+  },
 };
 
 export default function RootLayout({
