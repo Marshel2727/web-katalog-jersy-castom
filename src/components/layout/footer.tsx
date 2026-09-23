@@ -29,12 +29,6 @@ export function Footer() {
             <Link href="/#ulasan">
               Cerita pelanggan <ArrowUpRight size={15} />
             </Link>
-            <a href="https://www.instagram.com/bp_sportapparel?stkn=MWgxZHl5aDdkNnB2eA==" target="_blank" rel="noopener noreferrer">
-              Instagram <ArrowUpRight size={15} />
-            </a>
-            <a href="https://www.tiktok.com/@bp.sport_?_r=1&_t=ZS-99xgnS2QrPM" target="_blank" rel="noopener noreferrer">
-              TikTok <ArrowUpRight size={15} />
-            </a>
           </div>
           <div>
             <span className="eyebrow">PUNYA IDE DESAIN?</span>

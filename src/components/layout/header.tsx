@@ -26,6 +26,24 @@ export function Header() {
             priority
           />
         </Link>
+        <div className="header-socials" aria-label="Media sosial BP Sport">
+          <a
+            href="https://www.instagram.com/bp_sportapparel?stkn=MWgxZHl5aDdkNnB2eA=="
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram BP Sport"
+          >
+            <Image src="/images/instagram.svg" alt="" width={19} height={19} />
+          </a>
+          <a
+            href="https://www.tiktok.com/@bp.sport_?_r=1&_t=ZS-99xgnS2QrPM"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok BP Sport"
+          >
+            <Image src="/images/tiktok.svg" alt="" width={19} height={19} />
+          </a>
+        </div>
         <button
           className="menu-toggle"
           aria-label={open ? "Tutup navigasi" : "Buka navigasi"}
