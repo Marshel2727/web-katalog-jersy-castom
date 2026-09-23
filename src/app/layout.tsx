@@ -14,6 +14,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
+  verification: { google: "ANSYNoLjWtV1srX8JBzorvRiZVmCLhPPSyccutgrM-A" },
   title: {
     default: "BP Sport — Jersey & Kaos Custom",
     template: "%s | BP Sport",
