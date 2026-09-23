@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import { OptimizedPhoto as Image } from "@/components/ui/optimized-photo";
 import { useState } from "react";
 import type { JerseyDesign } from "@/types";
 export function DesignGallery({ design }: { design: JerseyDesign }) {
@@ -28,7 +28,7 @@ export function DesignGallery({ design }: { design: JerseyDesign }) {
             aria-label={`Lihat ${i === 0 ? "sampul" : `detail ${i}`}`}
             className={index === i ? "selected" : ""}
           >
-            <Image src={src} alt="" width={70} height={78} />
+            <Image variant="small" src={src} alt="" width={70} height={78} />
             <span>{i === 0 ? "Sampul" : `Detail ${i}`}</span>
           </button>
         ))}

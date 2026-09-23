@@ -84,3 +84,7 @@ FAQ pemesanan di beranda (setelah Cara Pesan) menggunakan jQuery pada `src/compo
 Metadata Open Graph dan Twitter menggunakan nama BP Sport, deskripsi layanan, serta gambar identitas emerald. Isi environment variable NEXT_PUBLIC_SITE_URL dengan URL Production publik (termasuk https://) sebelum build. Pada Vercel, jika variabel tersebut kosong, metadata menggunakan VERCEL_PROJECT_PRODUCTION_URL; build lokal memakai http://localhost:3000.
 
 Bagikan domain Production dari Settings > Domains, bukan URL deployment acak yang dilindungi. Jika bot menerima halaman Protected Deployment, metadata website tidak dapat dibaca. Perubahan metadata perlu di-deploy ulang; pratinjau lama dapat tetap tersimpan dalam cache aplikasi pesan.
+
+## Optimasi foto
+
+Jalankan `node scripts/optimize-photos.mjs` setelah menambah atau mengganti foto JPG/PNG di folder katalog atau models. Script mempertahankan sumber asli dan membuat WebP ukuran maksimum 700 px (kartu) dan 1200 px (galeri/model), serta placeholder kecil dalam src/data/optimized-images.json. Komponen OptimizedPhoto memilih versi sesuai kebutuhan. Jalankan build ulang setelah optimasi. Slideshow memuat foto pertama terlebih dahulu, kemudian foto berikutnya setelah foto aktif selesai dimuat.

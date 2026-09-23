@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { OptimizedPhoto as Image } from "@/components/ui/optimized-photo";
 import { ModelSlideshow } from "./model-slideshow";
 import { JerseyCustomizer } from "./jersey-customizer";
 import { designs } from "@/data/designs";
@@ -163,13 +163,13 @@ export function PreviousOrders() {
               <ArrowUpRight size={24} />
             </div>
             <div className="story-shirts">
-              <Image
+              <Image variant="small"
                 src={d.images[0]}
                 alt={`Foto produk ${d.name}`}
                 width={350}
                 height={390}
               />
-              <Image
+              <Image variant="small"
                 src={d.images[1]}
                 alt={`Foto detail ${d.name}`}
                 width={350}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { OptimizedPhoto as Image } from "@/components/ui/optimized-photo";
 import { ArrowUpRight } from "lucide-react";
 import type { JerseyDesign } from "@/types";
 export function DesignCard({ design }: { design: JerseyDesign }) {
@@ -18,7 +18,7 @@ export function DesignCard({ design }: { design: JerseyDesign }) {
               : "CUSTOM SERIES"}
         </span>
         <div className="card-image-stack">
-          <Image
+          <Image variant="small"
             className="card-img-primary"
             src={design.images[0]}
             alt={`Foto produk ${design.name}`}
@@ -26,7 +26,7 @@ export function DesignCard({ design }: { design: JerseyDesign }) {
             height={580}
           />
           {hasSecondary && (
-            <Image
+            <Image variant="small"
               className="card-img-secondary"
               src={design.images[1]}
               alt={`Foto detail ${design.name}`}

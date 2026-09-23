@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import { OptimizedPhoto as Image } from "@/components/ui/optimized-photo";
 import { CatalogBrowser } from "@/components/catalog/catalog-browser";
 import { WhatsAppLink } from "@/components/ui/whatsapp-link";
 import { Sparkles, Check, ArrowRight } from "lucide-react";
@@ -66,6 +66,7 @@ export default function CatalogPage() {
 
               <div className="spotlight-preview-box">
                 <Image
+                  variant="small"
                   src="/images/katalog/setelan-teal/sampul.jpg"
                   alt="Portofolio jersey setelan teal BP Sport"
                   width={400}
