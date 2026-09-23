@@ -5,7 +5,10 @@ import { CatalogBrowser } from "@/components/catalog/catalog-browser";
 import { WhatsAppLink } from "@/components/ui/whatsapp-link";
 import { Sparkles, Check, ArrowRight } from "lucide-react";
 
-export const metadata: Metadata = { title: "Katalog Jersey Custom" };
+export const metadata: Metadata = {
+  title: "Katalog Jersey Custom",
+  alternates: { canonical: "/katalog/" },
+};
 
 export default function CatalogPage() {
   return (

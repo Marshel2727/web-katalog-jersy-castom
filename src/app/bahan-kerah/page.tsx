@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Pilihan Bahan & Kerah",
   description:
     "Lihat 21 jenis kain dan 19 model kerah BP Sport. Temukan tekstur dan bentuk pilihan untuk jersey kamu, lalu diskusikan detailnya saat konsultasi.",
+  alternates: { canonical: "/bahan-kerah/" },
 };
 
 export default function MaterialsPage() {

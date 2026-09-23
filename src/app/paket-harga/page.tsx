@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Paket Harga Jersey",
   description:
     "Pilihan harga jersey printing dan setelan sablon BP Sport. Bandingkan isi paket, bahan lokal atau import, dan ketentuan pembelian.",
+  alternates: { canonical: "/paket-harga/" },
 };
 
 export default function PricingPage() {

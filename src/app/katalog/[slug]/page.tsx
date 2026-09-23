@@ -20,6 +20,7 @@ export async function generateMetadata({
   return {
     title: d?.name ?? "Desain tidak ditemukan",
     description: d?.description,
+    alternates: { canonical: `/katalog/${slug}/` },
   };
 }
 export default async function DetailPage({

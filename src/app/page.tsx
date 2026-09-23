@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Hero,
   FeaturedDesigns,
@@ -10,6 +11,9 @@ import {
 import { MaterialsPreview } from "@/components/materials/materials-preview";
 import Link from "next/link";
 import { OrderingFaq } from "@/components/home/ordering-faq";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
+
 export default function Home() {
   return (
     <main id="main">
