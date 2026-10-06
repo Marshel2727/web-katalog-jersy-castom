@@ -39,7 +39,7 @@ export default function CatalogPage() {
 
             <div className="catalog-hero-actions">
               <Link className="button" href="/#custom">
-                Coba Simulator Desain <ArrowRight size={15} />
+                Konsultasi Custom Desain <ArrowRight size={15} />
               </Link>
               <Link className="button button-outline" href="/paket-harga">
                 Cek Paket Harga <ArrowRight size={15} />

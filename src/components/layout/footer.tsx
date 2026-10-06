@@ -14,9 +14,9 @@ export function Footer() {
               <Image className="brand-logo" src="/images/bp-sport-logo.png" alt="BP Sport" width={2296} height={394} />
             </Link>
             <p>
-              Identitas tim kamu, dalam setiap jahitan.
+              Bukan sekadar jersey, ini identitas juara dalam setiap jahitan.
               <br />
-              Spesialis jersey, juga menerima kaos desain custom.
+              Spesialis jersey custom & pakaian olahraga berkualitas.
             </p>
           </div>
           <div className="footer-links">

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { OptimizedPhoto as Image } from "@/components/ui/optimized-photo";
 import { ModelSlideshow } from "./model-slideshow";
-import { JerseyCustomizer } from "./jersey-customizer";
 import { designs } from "@/data/designs";
 import { testimonials } from "@/data/site";
 import { DesignCard } from "@/components/catalog/design-card";
@@ -21,18 +20,18 @@ export function Hero() {
       <section className="hero container">
         <div className="hero-copy">
           <div className="hero-kicker">
-            <span className="status-dot" /> BP SPORT / JERSEY & CUSTOM APPAREL
+            <span className="status-dot" /> BP SPORT / PREMIUM CUSTOM SPORTSWEAR
           </div>
           <h1>
             Bukan sekadar
             <br />
             jersey.
             <br />
-            <span className="lime">Ini identitas.</span>
+            <span className="lime">Ini identitas juara.</span>
           </h1>
           <p>
-            Jersey dan kaos custom untuk tim, komunitas, dan acara.
-            Sesuaikan warna, logo, nama, serta nomor sesuai kebutuhan kamu.
+            Wujudkan jersey dan kaos custom dengan karakter kuat untuk tim, komunitas, dan acaramu.
+            Bebas kustomisasi desain, warna, nama, serta nomor sesuai karakter tim kamu.
           </p>
           <div className="hero-actions">
             <Link href="/katalog" className="button">
@@ -126,7 +125,57 @@ export function FeaturedDesigns() {
   );
 }
 export function CustomSection() {
-  return <JerseyCustomizer />;
+  return (
+    <section className="container" id="custom">
+      <div className="custom-section">
+        <div className="custom-visual">
+          <Image
+            className="brand-fabric-image"
+            src="/images/bp-sport-emerald.jpg"
+            alt="Logo putih BP Sport di atas kain emerald dengan gradasi teal gelap"
+            width={500}
+            height={560}
+          />
+          <span className="custom-label">DESIGN LAB / BP SPORT</span>
+        </div>
+        <div className="custom-copy">
+          <span className="eyebrow">02 / MAKE IT PERSONAL</span>
+          <h2>
+            Tim kamu unik.
+            <br />
+            Jerseynya juga
+            <br />
+            <span className="lime">harus begitu.</span>
+          </h2>
+          <p>
+            Punya sketsa sendiri atau baru sebatas ide? Mulai aja dulu. Kita
+            diskusikan sampai ketemu desain yang cocok dengan karakter tim kamu.
+          </p>
+          <div className="service-summary">
+            <div>
+              <strong>Jersey custom</strong>
+              <span>
+                Layanan utama untuk tim olahraga dan komunitas. Sesuaikan warna, logo, nama, serta nomor.
+              </span>
+            </div>
+            <div>
+              <strong>Kaos custom</strong>
+              <span>
+                Terima desain sendiri untuk kaos komunitas, acara, atau kebutuhan personal. Diskusikan desain dan detail pesanan via WhatsApp.
+              </span>
+            </div>
+          </div>
+          <div className="custom-pill-list">
+            <span>↗ Warna tim</span>
+            <span>↗ Logo & sponsor</span>
+            <span>↗ Nama & nomor</span>
+            <span>↗ Desain sendiri</span>
+          </div>
+          <WhatsAppLink>Konsultasi Desain Sekarang</WhatsAppLink>
+        </div>
+      </div>
+    </section>
+  );
 }
 export function PreviousOrders() {
   return (
