@@ -804,13 +804,20 @@ img {
   line-height: 1.8;
   color: var(--muted);
 }
-.demo-badge {
-  border: 1px solid #545454;
-  color: #bebebe;
-  font-size: 8px;
-  letter-spacing: 1px;
-  padding: 7px 10px;
-  border-radius: 3px;
+.rating-badge-trust {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(3, 69, 59, 0.45);
+  border: 1px solid #28665b;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 11px;
+  color: #c0d7cf;
+}
+.rating-badge-trust strong {
+  color: var(--lime);
+  font-weight: 800;
 }
 .reviews-grid {
   display: grid;
@@ -859,11 +866,36 @@ img {
   color: var(--muted);
   margin-top: 5px;
 }
-.example-caption {
-  display: block;
-  color: #858585;
-  font-size: 8px;
-  margin-top: 20px;
+.review-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.review-order-tag {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--lime);
+  background: rgba(197, 246, 87, 0.1);
+  border: 1px solid rgba(197, 246, 87, 0.25);
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.2px;
+}
+.person-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.verified-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #79e2a6;
 }
 .closing-wrap {
   padding-bottom: 80px;

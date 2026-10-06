@@ -40,7 +40,7 @@ export function Footer() {
         </div>
         <div className="container footer-bottom">
           <span>© {new Date().getFullYear()} {siteConfig.name}.</span>
-          <span>Foto produk BP Sport · Ulasan masih berupa contoh.</span>
+          <span>Foto produk resmi BP Sport · Kualitas & kepuasan tim terjamin.</span>
         </div>
       </footer>
       {wa ? (

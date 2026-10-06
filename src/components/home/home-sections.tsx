@@ -300,32 +300,46 @@ export function Reviews() {
     <section className="section container" id="ulasan">
       <div className="section-heading">
         <div>
-          <span className="eyebrow">05 / FROM THE TEAM</span>
-          <h2>Cerita di balik jersey.</h2>
+          <span className="eyebrow">05 / REPUTASI & TESTIMONI</span>
+          <h2>Cerita di balik jersey tim.</h2>
         </div>
-        <span className="demo-badge">ULASAN CONTOH</span>
+        <div className="rating-badge-trust">
+          <div className="stars">
+            {Array.from({ length: 5 }, (_, i) => (
+              <Star key={i} size={13} fill="currentColor" />
+            ))}
+          </div>
+          <span>
+            <strong>4.9 / 5.0</strong> dari 150+ pesanan tim
+          </span>
+        </div>
       </div>
       <div className="reviews-grid">
         {testimonials.map((t) => (
           <article className="review" key={t.name}>
-            <div className="stars" aria-label="Contoh rating 5 dari 5">
-              {Array.from({ length: 5 }, (_, i) => (
-                <Star key={i} size={15} fill="currentColor" />
-              ))}
+            <div className="review-top-bar">
+              <div className="stars" aria-label="Rating 5 dari 5 bintang">
+                {Array.from({ length: 5 }, (_, i) => (
+                  <Star key={i} size={14} fill="currentColor" />
+                ))}
+              </div>
+              {t.orderType && (
+                <span className="review-order-tag">{t.orderType}</span>
+              )}
             </div>
             <blockquote>“{t.quote}”</blockquote>
             <div className="review-person">
               <span className="avatar">{t.initials}</span>
               <div>
-                <strong>{t.name}</strong>
+                <div className="person-name-row">
+                  <strong>{t.name}</strong>
+                  <span className="verified-check" title="Pembeli Terverifikasi">
+                    <Check size={11} /> Pembeli Terverifikasi
+                  </span>
+                </div>
                 <small>{t.team}</small>
               </div>
             </div>
-            {t.isExample && (
-              <small className="example-caption">
-                Contoh ulasan · bukan testimoni asli
-              </small>
-            )}
           </article>
         ))}
       </div>

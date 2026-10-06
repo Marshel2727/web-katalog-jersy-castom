@@ -15,7 +15,8 @@ export type Testimonial = {
   team: string;
   quote: string;
   initials: string;
-  isExample: boolean;
+  isExample?: boolean;
+  orderType?: string;
 };
 export type SiteConfig = { name: string; whatsapp: string; tagline: string };
 export type PricingPackage = {

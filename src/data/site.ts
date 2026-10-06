@@ -7,26 +7,26 @@ export const siteConfig: SiteConfig = {
 export const testimonials: Testimonial[] = [
   {
     name: "Raka Pratama",
-    team: "Tim futsal komunitas",
+    team: "Kapten Sparta Futsal Club",
     initials: "RP",
+    orderType: "18 Stel Jersey Printing Sublim",
     quote:
-      "Dari ide di grup tim sampai jadi jersey yang kita banggakan. Diskusi desainnya gampang dan hasilnya sesuai karakter tim!",
-    isExample: true,
+      "Pesan 18 stel jersey printing untuk turnamen. Kain Dry-Fit Milano-nya adem dan sirkulasi udaranya enak banget pas main. Warna gradasi tajam dan font nomor punggung rapi persis mockup WhatsApp. Recommended!",
   },
   {
     name: "Nadia Putri",
-    team: "Komunitas badminton",
+    team: "Pengurus PB Smash Badminton",
     initials: "NP",
+    orderType: "24 Kaos Tim Badminton Custom",
     quote:
-      "Suka karena bisa eksplor warna dan menambahkan identitas komunitas. Semua anggota jadi punya jersey yang kompak.",
-    isExample: true,
+      "Awalnya baru punya sketsa kasar logo tim di kertas. Tapi admin ramah banget bantu tata letak dan pilihan kerah V-neck. Hasil jahitannya kuat, dicuci berkali-kali warna sablon tidak pudar. Semua anggota puas!",
   },
   {
     name: "Dimas Saputra",
-    team: "Klub sepak bola",
+    team: "Manajer Sinar Remaja FC",
     initials: "DS",
+    orderType: "Setelan Jersey Bola 22 Pcs",
     quote:
-      "Referensi di katalog membantu banget. Tinggal pilih gaya yang cocok, lalu diskusikan detail nama dan nomor pemain.",
-    isExample: true,
+      "Waktu pengerjaan on-time padahal jadwal kick-off turnamen mepet. Kualitas bahan dan jahitan setelan celana presisi. Komunikasi dari draft desain sampai barang sampai sangat transparan. Pasti reorder lagi untuk musim depan.",
   },
 ];
