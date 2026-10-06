@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import $ from "jquery";
 
 const questions = [
@@ -56,6 +58,11 @@ export function OrderingFaq() {
             <div className="faq-answer" id={`faq-answer-${index}`} role="region" aria-labelledby={`faq-question-${index}`}><p>{answer}</p></div>
           </article>
         ))}
+      </div>
+      <div className="faq-more-cta">
+        <Link href="/faq" className="button button-outline">
+          Buka Halaman Q&A Lengkap <ArrowUpRight size={16} />
+        </Link>
       </div>
     </section>
   );

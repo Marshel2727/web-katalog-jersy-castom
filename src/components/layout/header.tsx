@@ -83,6 +83,13 @@ export function Header() {
           >
             Bahan & Kerah
           </Link>
+          <Link
+            className={path.startsWith("/faq") ? "active" : ""}
+            href="/faq"
+            onClick={() => setOpen(false)}
+          >
+            Q&A
+          </Link>
           <Link href="/#cara-pesan" onClick={() => setOpen(false)}>
             Cara Pesan
           </Link>

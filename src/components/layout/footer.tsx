@@ -23,6 +23,15 @@ export function Footer() {
             <Link href="/katalog">
               Jelajahi katalog <ArrowUpRight size={15} />
             </Link>
+            <Link href="/paket-harga">
+              Paket harga <ArrowUpRight size={15} />
+            </Link>
+            <Link href="/bahan-kerah">
+              Bahan & kerah <ArrowUpRight size={15} />
+            </Link>
+            <Link href="/faq">
+              Tanya Jawab (Q&A) <ArrowUpRight size={15} />
+            </Link>
             <Link href="/#cara-pesan">
               Cara pemesanan <ArrowUpRight size={15} />
             </Link>
